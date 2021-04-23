@@ -184,21 +184,49 @@ export const MidBox1 = styled.div`
   grid-area: MidBox1;
   background: white;
   margin: 1em;
+  display: grid;
+  grid-template-areas:
+  'Img Info Desc Desc';
 `;
 export const MidBox2 = styled.div`
   grid-area: MidBox2;
   background: white;
   margin: 1em;
+  display: grid;
+  grid-template-areas:
+  'Img Info Desc Desc';
 `;
 export const MidBox3 = styled.div`
   grid-area: MidBox3;
   background: white;
   margin: 1em;
+  display: grid;
+  grid-template-areas:
+  'Img Info Desc Desc';
 `;
 export const MidBox4 = styled.div`
   grid-area: MidBox4;
   background: white;
   margin: 1em;
+  display: grid;
+  grid-template-areas:
+  'Img Info Desc Desc';
+`;
+
+export const Img = styled.div`
+  grid-area: Img;
+  color: black;
+`;
+
+export const Info = styled.div`
+  grid-area: Info;
+  background: black;
+  color: white;
+`;
+
+export const Description = styled.div`
+  grid-area: Desc;
+  color: black;
 `;
 
 export const Foot = styled.footer`

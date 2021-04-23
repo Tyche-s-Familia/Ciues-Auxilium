@@ -25,6 +25,9 @@ import {
   Philosophy,
   Input,
   Form,
+  Img,
+  Description,
+  Info,
   Foot
 } from './GlobalStyles';
 
@@ -96,10 +99,26 @@ export default function App() {
               <Button>UPDATES</Button>
             </TopMain>
             <MidMain>
-              <MidBox1 />
-              <MidBox2 />
-              <MidBox3 />
-              <MidBox4 />
+              <MidBox1>
+                <Img>Img</Img>
+                <Info>Info</Info>
+                <Description>Description</Description>
+              </MidBox1>
+              <MidBox2>
+                <Img>Img</Img>
+                <Info>Info</Info>
+                <Description>Description</Description>
+              </MidBox2>
+              <MidBox3>
+                <Img>Img</Img>
+                <Info>Info</Info>
+                <Description>Description</Description>
+              </MidBox3>
+              <MidBox4>
+                <Img>Img</Img>
+                <Info>Info</Info>
+                <Description>Description</Description>
+              </MidBox4>
             </MidMain>
           </Main>
           <Foot>
