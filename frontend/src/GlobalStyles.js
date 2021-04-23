@@ -79,9 +79,11 @@ export const Button = styled.button`
 export const Nav = styled.nav`
   grid-area: Nav;
   display: flex;
+  margin-left: 7rem;
   align-items: center;
   @media (max-width: 786px) {
         flex-direction: column;
+        margin-left: 2em;
   }
 `;
 
