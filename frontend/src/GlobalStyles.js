@@ -1,4 +1,4 @@
-import styled, {createGlobalStyle} from "styled-components";
+import styled, {createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -53,6 +53,9 @@ export const TopNav = styled.nav`
 `;
 
 export const Logo = styled.div`
+  font-size: 18px;
+  padding: 9px 12px;
+  font-weight: 700;
   grid-area: Logo;
 `;
 
@@ -61,16 +64,97 @@ export const Buttons = styled.div`
 `;
 
 export const Button = styled.button`
+  padding: 5px 12px;
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: ${({ theme }) => theme.color1};
+  border: 0px;
+  border-radius: 3px;
+  appearance: none;
+  cursor: pointer;
+  margin: 1rem;
 `;
 
 export const Nav = styled.nav`
-  background: red;
   grid-area: Nav;
+  display: flex;
+  align-items: center;
+  @media (max-width: 786px) {
+        flex-direction: column;
+  }
+`;
+
+export const NavItems = styled.ul`
+  list-style: none;
+  padding-inline-start: 0;
+  display: flex;
+  align-items: center;
+  &:hover {
+        transform: scale(1.05);
+  }
+`;
+
+export const NavItem = styled.div`
+  margin-right: 20px;
+  cursor: pointer;
+  transition: 250ms;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 export const Search = styled.nav`
-  background: yellow;
   grid-area: Search;
+  display: grid;
+  grid-template-areas: 'Form . .';
+`;
+
+export const Form = styled.form`
+  grid-area: Form;
+  margin-left: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: ${props => (props.barOpened ? "30rem" : "8rem")};
+  cursor: ${props => (props.barOpened ? "auto" : "pointer")};
+  padding: 2rem;
+  height: 2rem;
+  border-radius: 10rem;
+  transition: width 500ms cubic-bezier(0.645, 0.045, 0.355, 1);
+`;
+
+export const Input = styled.input`
+  font-size: 14px;
+  line-height: 1;
+  background-color: transparent;
+  width: 100%;
+  margin-left: ${props => (props.barOpened ? "1rem" : "0rem")};
+  border: none;
+  color: Black;
+  transition: margin 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+  &::placeholder {
+    color: white;
+  }
+`;
+
+export const FormButton = styled.button`
+  line-height: 1;
+  pointer-events: ${props => (props.barOpened ? "auto" : "none")};
+  cursor: ${props => (props.barOpened ? "pointer" : "none")};
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: black;
 `;
 
 export const Main = styled.section`
