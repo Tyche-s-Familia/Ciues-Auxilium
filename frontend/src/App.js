@@ -7,6 +7,15 @@ import {
   Search,
   Nav,
   Main,
+  TopMain,
+  MidMain,
+  MidBox1,
+  MidBox2,
+  MidBox3,
+  MidBox4,
+  Buttons,
+  Logo,
+  Button,
   Foot
 } from './GlobalStyles';
 
@@ -15,10 +24,24 @@ export default function App() {
     <Router>
       <GlobalStyles />
         <Wrapper>
-          <TopNav />
+          <TopNav>
+            <Logo>Logo</Logo>
+            <Buttons>
+              <Button>Log In</Button>
+              <Button>Account</Button>
+            </Buttons>
+          </TopNav>
           <Search />
           <Nav />
-          <Main />
+          <Main>
+            <TopMain />
+            <MidMain>
+              <MidBox1 />
+              <MidBox2 />
+              <MidBox3 />
+              <MidBox4 />
+            </MidMain>
+          </Main>
           <Foot />
         </Wrapper>
     </Router>
