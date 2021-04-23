@@ -1,40 +1,39 @@
 import styled from "styled-components";
 import './App.css'
 
-const Wrapper = styled.section`
+const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   background: black;
   display: grid;
-  grid-template-areas: 
-  'TopNav TopNav TopNav'
+  grid-template-areas: 'TopNav TopNav TopNav'
   'Search Search Search'
   'Nav Nav Nav'
   'Main Main Main'
   'Foot Foot Foot';
 `;
 
-const TopNav = styled.nav`
+const TopNav = styled.div`
   background: pink;
   grid-area: TopNap;
 `;
 
-const Search = styled.nav`
+const Search = styled.div`
   background: yellow;
   grid-area: Search;
 `;
 
-const Nav = styled.nav`
+const Nav = styled.div`
   background: red;
   grid-area: Nav;
 `;
 
-const Main = styled.nav`
+const Main = styled.div`
   background: violet;
   grid-area: Main;
 `;
 
-const Foot = styled.nav`
+const Foot = styled.div`
   background: yellow;
   grid-area: Foot;
 `;
