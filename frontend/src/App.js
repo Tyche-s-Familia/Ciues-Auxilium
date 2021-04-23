@@ -89,7 +89,10 @@ export default function App() {
               </NavItems>
           </Nav>
           <Main>
-            <TopMain />
+            <TopMain>
+              <Button>PROJECTS</Button>
+              <Button>UPDATES</Button>
+            </TopMain>
             <MidMain>
               <MidBox1 />
               <MidBox2 />

@@ -158,16 +158,14 @@ export const FormButton = styled.button`
 `;
 
 export const Main = styled.section`
-  background: violet;
   grid-area: Main;
   display: grid;
-  grid-template-rows: 15vh auto;
+  grid-template-rows: 6vh auto;
   grid-template-areas: 'TopMain TopMain TopMain'
   'MidMain MidMain MidMain'
 `;
 
 export const TopMain = styled.div`
-  background: yellow;
   grid-area: TopMain;
 `;
 
@@ -204,4 +202,9 @@ export const MidBox4 = styled.div`
 export const Foot = styled.footer`
   background: yellow;
   grid-area: Foot;
+  display: grid;
+  grid-template-areas:
+  'GitLink . Philosophy'
 `;
+
+
