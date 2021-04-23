@@ -6,6 +6,8 @@ const Wrapper = styled.div`
   height: 100vh;
   background: black;
   display: grid;
+  text-align: center;
+  grid-template-rows: 6vh 6vh 6vh 76vh 6vh;
   grid-template-areas: 'TopNav TopNav TopNav'
   'Search Search Search'
   'Nav Nav Nav'
@@ -13,35 +15,29 @@ const Wrapper = styled.div`
   'Foot Foot Foot';
 `;
 
-const TopNav = styled.div`
+const TopNav = styled.nav`
   background: pink;
-  grid-area: TopNap;
+  grid-area: TopNav;
 `;
 
-const Search = styled.div`
+const Search = styled.nav`
   background: yellow;
   grid-area: Search;
 `;
 
-const Nav = styled.div`
+const Nav = styled.nav`
   background: red;
   grid-area: Nav;
 `;
 
-const Main = styled.div`
+const Main = styled.section`
   background: violet;
   grid-area: Main;
 `;
 
-const Foot = styled.div`
+const Foot = styled.footer`
   background: yellow;
   grid-area: Foot;
-`;
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: blue;
 `;
 
 export default function App() {
@@ -50,7 +46,7 @@ export default function App() {
       <TopNav>Top Nav</TopNav>
       <Search>Search</Search>
       <Nav>Nav</Nav>
-      <Main><Title>Hello</Title></Main>
+      <Main>Main</Main>
       <Foot>Footer</Foot>
     </Wrapper>
   )
