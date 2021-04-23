@@ -21,6 +21,8 @@ import {
   Logo,
   Button,
   FormButton,
+  GitLink,
+  Philosophy,
   Input,
   Form,
   Foot
@@ -100,7 +102,10 @@ export default function App() {
               <MidBox4 />
             </MidMain>
           </Main>
-          <Foot />
+          <Foot>
+            <GitLink>GitHub</GitLink>
+            <Philosophy>Philosophy</Philosophy>
+          </Foot>
         </Wrapper>
     </Router>
   )

@@ -180,31 +180,48 @@ export const MidMain = styled.div`
 
 export const MidBox1 = styled.div`
   grid-area: MidBox1;
-  background: red;
+  background: white;
   margin: 1em;
 `;
 export const MidBox2 = styled.div`
   grid-area: MidBox2;
-  background: red;
+  background: white;
   margin: 1em;
 `;
 export const MidBox3 = styled.div`
   grid-area: MidBox3;
-  background: red;
+  background: white;
   margin: 1em;
 `;
 export const MidBox4 = styled.div`
   grid-area: MidBox4;
-  background: red;
+  background: white;
   margin: 1em;
 `;
 
 export const Foot = styled.footer`
-  background: yellow;
+  background: white;
+  color: black;
   grid-area: Foot;
   display: grid;
   grid-template-areas:
   'GitLink . Philosophy'
 `;
 
+export const GitLink = styled.a`
+  grid-area: GitLink;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 700;
+  appearance: none;
+  cursor: pointer;
+`;
 
+export const Philosophy = styled.a`
+  grid-area: Philosophy;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 700;
+  appearance: none;
+  cursor: pointer;
+`;
