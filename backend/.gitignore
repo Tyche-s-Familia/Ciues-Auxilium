@@ -1,6 +1,8 @@
 env/
 **/__pycache__/
 .vscode/
+web_app.egg-info/
+
 
 .env
 *.pyc
