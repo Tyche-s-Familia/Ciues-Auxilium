@@ -139,7 +139,6 @@ export const Input = styled.input`
   border: none;
   color: Black;
   transition: margin 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
-
   &:focus,
   &:active {
     outline: none;
@@ -188,6 +187,7 @@ export const MidBox1 = styled.div`
   grid-template-areas:
   'Img Info Desc Desc';
 `;
+
 export const MidBox2 = styled.div`
   grid-area: MidBox2;
   background: white;
@@ -196,6 +196,7 @@ export const MidBox2 = styled.div`
   grid-template-areas:
   'Img Info Desc Desc';
 `;
+
 export const MidBox3 = styled.div`
   grid-area: MidBox3;
   background: white;
@@ -204,6 +205,7 @@ export const MidBox3 = styled.div`
   grid-template-areas:
   'Img Info Desc Desc';
 `;
+
 export const MidBox4 = styled.div`
   grid-area: MidBox4;
   background: white;
