@@ -42,7 +42,7 @@ export default function App() {
     e.preventDefault();
     setInput("");
     setBarOpened(false);
-    console.log(`Was submited with input: ${input}`);
+    console.log(`Was submitted with input: ${input}`);
   };
 
   return (
