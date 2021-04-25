@@ -1,8 +1,7 @@
 import React, { useState, useRef } from "react";
-import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import {
-  GlobalStyles,
   Wrapper,
   TopNav,
   Search,
@@ -30,7 +29,7 @@ import {
   Foot
 } from '../GlobalStyles';
 
-const Feed = () => {
+export default function Feed() {
 
     const [input, setInput] = useState("");
     const [barOpened, setBarOpened] = useState(false);
@@ -46,15 +45,11 @@ const Feed = () => {
 
     return (
         <Router>
-        <GlobalStyles />
         <Wrapper>
           <TopNav>
-            <Route exact path='/feed'>
+            <Link to='/'>
               <Logo>Ciues-Auxilium</Logo>
-            </Route>
-            <Route exact path='/'>
-              <Redirect to='/feed' />
-            </Route>
+            </Link>
             <Buttons>
               <Link to='/login'>
                 <Button>Log In</Button>
@@ -137,5 +132,3 @@ const Feed = () => {
     </Router>
     );
 };
-
-export default Feed;
