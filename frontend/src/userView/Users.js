@@ -27,7 +27,7 @@ import {
     UserSup
 } from './UsersStyles'
 
-export const Users = () => {
+const Users = () => {
     return (
         <Router>
             <GlobalStyles />
@@ -68,3 +68,5 @@ export const Users = () => {
         </Router>
     )
 };
+
+export default Users;
