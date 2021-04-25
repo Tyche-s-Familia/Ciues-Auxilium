@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import ReactDOM from "react-dom";
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom";
+import {Users} from './userView/Users'
 
 import {
   GlobalStyles,
@@ -33,6 +33,8 @@ import {
 
 export default function App() {
 
+  console.log(Users.results)
+
   const [input, setInput] = useState("");
   const [barOpened, setBarOpened] = useState(false);
   const formRef = useRef();
@@ -50,10 +52,19 @@ export default function App() {
       <GlobalStyles />
         <Wrapper>
           <TopNav>
-            <Logo>Ciues-Auxilium</Logo>
+            <Route exact path='/feed'>
+              <Logo>Ciues-Auxilium</Logo>
+            </Route>
+            <Route exact path='/'>
+              <Redirect to='/feed' />
+            </Route>
             <Buttons>
-              <Button>Log In</Button>
-              <Button>Account</Button>
+              <Link to='/login'>
+                <Button>Log In</Button>
+              </Link>
+              <Link to='/users'>
+                <Button>Account</Button>
+              </Link>
             </Buttons>
           </TopNav>
           <Search>
@@ -125,6 +136,10 @@ export default function App() {
             <GitLink>GitHub</GitLink>
             <Philosophy>Philosophy</Philosophy>
           </Foot>
+          <Switch>
+            <Route path='/login' />
+            <Route exact path='/Users' component={Users}/>
+          </Switch>
         </Wrapper>
     </Router>
   )
