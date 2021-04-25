@@ -2,15 +2,20 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom";
 import {
     GlobalStyles,
-    Wrapper,
     TopNav,
     Logo,
-    Buttons,
     Button,
-    Philosophy,
+    Buttons,
+    Foot,
     GitLink,
-    Foot
+    Philosophy
 } from '../GlobalStyles'
+import {
+    Wrapper,
+    Author,
+    Project,
+    Supported
+} from './UsersStyles'
 
 export const Users = () => {
     return (
@@ -30,10 +35,13 @@ export const Users = () => {
                         </Link>
                     </Buttons>
                 </TopNav>
+                <Author />
+                <Project />
+                <Supported />
                 <Foot>
-            <GitLink>GitHub</GitLink>
-            <Philosophy>Philosophy</Philosophy>
-          </Foot>
+                    <GitLink>GitHub</GitLink>
+                    <Philosophy>Philosophy</Philosophy>
+                </Foot>
             </Wrapper>
         </Router>
     )
