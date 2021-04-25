@@ -15,15 +15,33 @@ export const Wrapper = styled.section`
 
 export const Author = styled.div`
     grid-area: Author;
-    background: red;
+    display: grid;
+    color: black;
+    border: 3px solid white;
     grid-template-areas: 'AuthorName AuthorImg AuthorImg'
     'AuthorBio AuthorBio AuthorDetail'
 `;
 
-export const AuthorName = styled.div``;
-export const AuthorBio = styled.div``;
-export const AuthorImg = styled.div``;
-export const AuthorDetail = styled.div``;
+export const AuthorName = styled.div`
+    grid-area: AuthorName;
+    margin: 0.5rem;
+    background: white;
+`;
+export const AuthorBio = styled.div`
+    grid-area: AuthorBio;
+    margin: 0.5rem;
+    background: white;
+`;
+export const AuthorImg = styled.div`
+    grid-area: AuthorImg;
+    margin: 0.5rem;
+    background: white;
+`;
+export const AuthorDetail = styled.div`
+    grid-area: AuthorDetail;
+    margin: 0.5rem;
+    background: white;
+`;
 
 export const Project = styled.div`
     grid-area: Project;
