@@ -21,7 +21,7 @@ import {
     Description
 } from './DetailsStyles'
 
-export const Details = () => {
+const Details = () => {
     return (
         <Router>
             <GlobalStyles />
@@ -53,3 +53,5 @@ export const Details = () => {
         </Router>
     );
 };
+
+export default Details;
