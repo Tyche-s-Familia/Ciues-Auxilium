@@ -13,6 +13,10 @@ import {
 import {
     Wrapper,
     Author,
+    AuthorName,
+    AuthorBio,
+    AuthorImg,
+    AuthorDetail,
     Project,
     Supported
 } from './UsersStyles'
@@ -35,7 +39,12 @@ export const Users = () => {
                         </Link>
                     </Buttons>
                 </TopNav>
-                <Author />
+                <Author>
+                    <AuthorName>Name</AuthorName>
+                    <AuthorImg>IMG</AuthorImg>
+                    <AuthorBio>Bio</AuthorBio>
+                    <AuthorDetail>Detail</AuthorDetail>
+                </Author>
                 <Project />
                 <Supported />
                 <Foot>
