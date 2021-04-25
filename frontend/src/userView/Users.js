@@ -18,7 +18,13 @@ import {
     AuthorImg,
     AuthorDetail,
     Project,
-    Supported
+    UserPro,
+    Names,
+    Details,
+    Supported,
+    NameSup,
+    DetailsSup,
+    UserSup
 } from './UsersStyles'
 
 export const Users = () => {
@@ -40,13 +46,20 @@ export const Users = () => {
                     </Buttons>
                 </TopNav>
                 <Author>
-                    <AuthorName>Name</AuthorName>
+                    <AuthorName>AUTHOR NAME && BIO</AuthorName>
                     <AuthorImg>IMG</AuthorImg>
-                    <AuthorBio>Bio</AuthorBio>
                     <AuthorDetail>Detail</AuthorDetail>
                 </Author>
-                <Project />
-                <Supported />
+                <Project>
+                    <UserPro>USER’S PROJECTS</UserPro>
+                    <Names>Name of PROJECTS</Names>
+                    <Details>Detail of PROJECTS</Details>
+                </Project>
+                <Supported>
+                    <UserSup>USER’S SUPPORTED PROJECTS</UserSup>
+                    <NameSup>Name of SUPPORTED</NameSup>
+                    <DetailsSup>Detail of SUPPORTED</DetailsSup>
+                </Supported>
                 <Foot>
                     <GitLink>GitHub</GitLink>
                     <Philosophy>Philosophy</Philosophy>
