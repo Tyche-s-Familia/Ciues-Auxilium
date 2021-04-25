@@ -1,5 +1,6 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom";
+import {BrowserRouter as Router, Link} from "react-router-dom";
+
 import {
     GlobalStyles,
     TopNav,
@@ -14,7 +15,6 @@ import {
     Wrapper,
     Author,
     AuthorName,
-    AuthorBio,
     AuthorImg,
     AuthorDetail,
     Project,
