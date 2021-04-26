@@ -97,18 +97,22 @@ session = Session()
 # session.commit()
 # raiseload
 
-# users = session.query(User).options(joinedload(User.projects), raiseload('*')).all()
-# for user_obj in users:
-#     print(user_obj.user_id)
-#     print(user_obj.projects.project_id)
+users = session.query(User).options(joinedload(User.projects), raiseload('*')).all()
+for user_obj in users:
+    result = user_obj.projects
+    # print(user_obj.user_id)
+    for project in result:
+        print(project.project_id)
+        
+    # print(user_obj.projects.project_id)
 
 # projects = session.query(User).join(Project).filter(Project.author_id== 2).all()
 # for proj in projects:
 #     print(proj.user_id)
 
-projects = session.query(Project).join(User).filter(User.user_id== 1).all()
-for proj in projects:
-    print(proj.name)
+# projects = session.query(Project).join(User).filter(User.user_id== 1).all()
+# for proj in projects:
+#     print(proj.name)
 
 # projects = session.query(Project).all()
 # for project_obj in projects:

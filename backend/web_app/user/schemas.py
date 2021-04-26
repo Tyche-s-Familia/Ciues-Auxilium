@@ -17,6 +17,9 @@ class UserSchema(ma.SQLAlchemySchema):
     username = ma.auto_field()
     email = ma.auto_field()
     projects = ma.auto_field()
+    supporting = ma.auto_field()
+    credits = ma.auto_field()
+    bio = ma.auto_field()
 
 
 class ProjectSchema(ma.SQLAlchemySchema):
@@ -27,3 +30,6 @@ class ProjectSchema(ma.SQLAlchemySchema):
     name = ma.auto_field()
     author_id = ma.auto_field()
     author = ma.auto_field()
+    supporters = ma.auto_field()
+    description = ma.auto_field()
+    credits = ma.auto_field()
