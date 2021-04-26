@@ -1,8 +1,6 @@
 import React from 'react';
-import {BrowserRouter as Router, Link} from "react-router-dom";
 
 import {
-    GlobalStyles,
     TopNav,
     Logo,
     Button,
@@ -29,22 +27,15 @@ import {
 
 const Users = () => {
     return (
-        <Router>
-            <GlobalStyles />
+            <>
             <Wrapper>
                 <TopNav>
-                    <Link exact path='/feed'>
-                        <Logo>Ciues-Auxilium</Logo>
-                    </Link>
+                    <Logo>Ciues-Auxilium</Logo>
                     <Buttons>
-                        <Link to='/login'>
-                            <Button>Log In</Button>
-                        </Link>
-                        <Link to='/users'>
-                            <Button>Account</Button>
-                        </Link>
-                    </Buttons>
-                </TopNav>
+                        <Button to='/login' >Log In</Button>
+                        <Button to='/account' >Account</Button>
+                        </Buttons>
+                    </TopNav>
                 <Author>
                     <AuthorName>AUTHOR NAME && BIO</AuthorName>
                     <AuthorImg>IMG</AuthorImg>
@@ -65,7 +56,7 @@ const Users = () => {
                     <Philosophy>Philosophy</Philosophy>
                 </Foot>
             </Wrapper>
-        </Router>
+        </>
     )
 };
 
