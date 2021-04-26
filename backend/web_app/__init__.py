@@ -18,6 +18,7 @@ app.config.update(
     SQLALCHEMY_TRACK_MODIFICATIONS=False
 )
 
+# print(os.environ['DATABASE_URL'])
 engine = create_engine(os.environ['DATABASE_URL'], echo=True)
 
 

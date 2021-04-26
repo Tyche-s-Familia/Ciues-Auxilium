@@ -1,3 +1,4 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy import Table, Column, Integer, String, Text, ForeignKey, Numeric
 from sqlalchemy.orm import sessionmaker, relationship
@@ -54,15 +55,15 @@ class Project(Base):
             self.description = description
             self.credits = credits
 
-
-engine = create_engine('postgresql://testuser:testingorm@localhost/testorm', echo=True)
+engine = create_engine(os.environ['DATABASE_URL'], echo=True)
+# engine = create_engine('postgresql://testuser:testingorm@localhost/testorm', echo=True)
 
 Session = sessionmaker(engine)
 session = Session()
 
 
 
-testuser = User(username='Me', email='fake@mail.ru') 
+testuser = User(username='notMe', email='fake@mail.ru') 
 session.add(testuser)
 session.commit()
 
