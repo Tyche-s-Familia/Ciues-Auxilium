@@ -1,9 +1,9 @@
-import React, { useState, useRef } from "react";
+import React from "react";
+import SearchBar from './SearchBar'
 
 import {
   Wrapper,
   TopNav,
-  Search,
   Nav,
   NavItems,
   NavItem,
@@ -17,11 +17,8 @@ import {
   Buttons,
   Logo,
   Button,
-  FormButton,
   GitLink,
   Philosophy,
-  Input,
-  Form,
   Img,
   Description,
   Info,
@@ -29,18 +26,6 @@ import {
 } from '../GlobalStyles';
 
 export default function Feed() {
-
-    const [input, setInput] = useState("");
-    const [barOpened, setBarOpened] = useState(false);
-    const formRef = useRef();
-    const inputFocus = useRef();
-
-    const onFormSubmit = e => {
-        e.preventDefault();
-        setInput("");
-        setBarOpened(false);
-        console.log(`Was submitted with input: ${input}`);
-    };
 
     return (
         <Wrapper>
@@ -51,35 +36,7 @@ export default function Feed() {
               <Button to='/account' >Account</Button>
             </Buttons>
           </TopNav>
-          <Search>
-            <Form
-              barOpened={barOpened}
-              onClick={() => {
-                setBarOpened(true);
-                inputFocus.current.focus();
-              }}
-              onFocus={() => {
-                setBarOpened(true);
-                inputFocus.current.focus();
-              }}
-              onBlur={() => {
-                setBarOpened(false);
-              }}
-              onSubmit={onFormSubmit}
-              ref={formRef}
-            >
-              <FormButton type="submit" barOpened={barOpened}>
-                Search:
-              </FormButton>
-              <Input
-                onChange={e => setInput(e.target.value)}
-                ref={inputFocus}
-                value={input}
-                barOpened={barOpened}
-                placeholder="Search here..."
-              />
-            </Form>
-          </Search>
+          <SearchBar />
           <Nav>
               <NavItems>
                 <NavItem to="/development">Development</NavItem>
