@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import {
   Wrapper,
@@ -44,19 +43,12 @@ export default function Feed() {
     };
 
     return (
-        <Router>
         <Wrapper>
           <TopNav>
-            <Link to='/'>
               <Logo>Ciues-Auxilium</Logo>
-            </Link>
             <Buttons>
-              <Link to='/login'>
-                <Button>Log In</Button>
-              </Link>
-              <Link to='/users'>
-                <Button>Account</Button>
-              </Link>
+              <Button to='/login' >Log In</Button>
+              <Button to='/account' >Account</Button>
             </Buttons>
           </TopNav>
           <Search>
@@ -90,16 +82,16 @@ export default function Feed() {
           </Search>
           <Nav>
               <NavItems>
-                <NavItem to="/">Development</NavItem>
-                <NavItem to="/">Arts</NavItem>
-                <NavItem to="/">Journalism</NavItem>
-                <NavItem to="/">Entertainment</NavItem>
+                <NavItem to="/development">Development</NavItem>
+                <NavItem to="/arts">Arts</NavItem>
+                <NavItem to="/journalism">Journalism</NavItem>
+                <NavItem to="/entertainment">Entertainment</NavItem>
               </NavItems>
           </Nav>
           <Main>
             <TopMain>
-              <Button>PROJECTS</Button>
-              <Button>UPDATES</Button>
+              <Button to='projects' >PROJECTS</Button>
+              <Button to='updates' >UPDATES</Button>
             </TopMain>
             <MidMain>
               <MidBox1>
@@ -125,10 +117,9 @@ export default function Feed() {
             </MidMain>
           </Main>
           <Foot>
-            <GitLink>GitHub</GitLink>
-            <Philosophy>Philosophy</Philosophy>
+            <GitLink to='github' >GitHub</GitLink>
+            <Philosophy to='philosophy' >Philosophy</Philosophy>
           </Foot>
         </Wrapper>
-    </Router>
     );
 };
