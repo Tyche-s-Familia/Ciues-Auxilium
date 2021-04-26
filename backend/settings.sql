@@ -1,3 +1,3 @@
-CREATE DATABASE testing;
-CREATE USER testinguser WITH PASSWORD 'testing';
-GRANT ALL PRIVILEGES ON DATABASE testing TO testinguser;
+CREATE DATABASE testorm;
+CREATE USER testuser WITH PASSWORD 'testingorm';
+GRANT ALL PRIVILEGES ON DATABASE testorm TO testuser;

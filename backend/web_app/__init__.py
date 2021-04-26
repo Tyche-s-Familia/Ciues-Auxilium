@@ -6,7 +6,9 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Api
 from flask.cli import with_appcontext
 
+from sqlalchemy import create_engine
 
+from .user.models import Base
 
 app = Flask(__name__)
 api = Api(app)
@@ -16,18 +18,29 @@ app.config.update(
     SQLALCHEMY_TRACK_MODIFICATIONS=False
 )
 
+engine = create_engine(os.environ['DATABASE_URL'], echo=True)
 
-from .users.routes import users
+
+
+
+from .user.routes import users
+from .user.routes import projects
 app.register_blueprint(users)
+app.register_blueprint(projects)
 
 
 
-from . import dbmodel
+
 
 @app.cli.command('create-table')
-@click.argument('dburi')
-def create_db(dburi):
-    dbmodel.db.drop_all()
-    app.config['SQLALCHEMY_DATABASE_URI'] = dburi
-    dbmodel.db.create_all()
-    dbmodel.db.session.commit()
+# @click.argument('dburi')
+def create_tables():
+
+    Base.metadata.drop_all(bind=engine)
+    Base.metadata.create_all(engine)  
+
+
+    # user_models.db.drop_all()
+    # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+    # user_models.db.create_all()
+    # user_models.db.session.commit()
