@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
 import APIurl from '../config'
 
-export default function SignInPage() {
+export default function Login() {
 	const history = useHistory();
 
 	const [customerSignIn, setCustomerSignIn] = useState({
