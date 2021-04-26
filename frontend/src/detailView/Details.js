@@ -1,8 +1,6 @@
 import React from 'react';
-import {BrowserRouter as Router, Link} from "react-router-dom";
 
 import {
-    GlobalStyles,
     TopNav,
     Logo,
     Button,
@@ -23,20 +21,13 @@ import {
 
 const Details = () => {
     return (
-        <Router>
-            <GlobalStyles />
+            <>
             <Wrapper>
                 <TopNav>
-                    <Link exact path='/feed'>
-                        <Logo>Ciues-Auxilium</Logo>
-                    </Link>
+                    <Logo>Ciues-Auxilium</Logo>
                     <Buttons>
-                        <Link to='/login'>
-                            <Button>Log In</Button>
-                        </Link>
-                        <Link to='/users'>
-                            <Button>Account</Button>
-                        </Link>
+                        <Button to='/login' >Log In</Button>
+                        <Button to='/account' >Account</Button>
                     </Buttons>
                 </TopNav>
                 <ProjectInfo />
@@ -50,7 +41,7 @@ const Details = () => {
                     <Philosophy>Philosophy</Philosophy>
                 </Foot>
             </Wrapper>
-        </Router>
+            </>
     );
 };
 
