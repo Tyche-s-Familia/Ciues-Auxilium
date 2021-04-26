@@ -11,35 +11,63 @@ from .. import engine
 from .models import Project, User
 from .schemas import UserSchema, ProjectSchema
 
+
 users = Blueprint('users', __name__, url_prefix='/users')
 projects = Blueprint('projects', __name__, url_prefix='/projects')
 
 Session = sessionmaker(engine)
 session = Session()
 
-@users.route('/login')
+
+
+@users.route('/')
 def index():
+    try:
+        session.flush()
+
+        session.commit()
+    except:
+        session.rollback()
+    
+
     flask_session['user_id'] = 42
     return jsonify({'work': 'in progress'})
 
 
-@users.route('/add', methods=['POST'])
-def add_user():
-    username = request.json['username']
-    email = request.json['email']
-    projects = []
-    supporting = []
-    bio = None
-    credits = 0
+# @users.route('/add', methods=['POST'])
+# def add_user():
+#     username = request.json['username']
+#     email = request.json['email']
+#     projects = []
+#     supporting = []
+#     bio = None
+#     credits = 0
 
-    new_user = User(username, email, projects, supporting, bio, credits)
-    session.add(new_user)
-    session.commit()
+#     new_user = User(username, email, projects, supporting, bio, credits)
+#     session.add(new_user)
+#     session.commit()
 
-    user_schema = UserSchema()
-    result = user_schema.dumps(new_user)
+#     user_schema = UserSchema()
+#     result = user_schema.dumps(new_user)
 
-    return result
+#     return result
+
+# @users.route('/add', methods=['POST'])
+# def add_user():
+#     username = request.json['username']
+#     email = request.json['email']
+#     projects = []
+#     supporting = []
+#     bio = None
+#     credits = 0
+
+#     new_user = User(username=username, email=email, projects=projects, supporting=supporting, bio=bio, credits=credits)
+#     session.add(new_user)
+#     session.commit()
+
+#     result = User.toJSON()
+
+#     return result
 
 @users.route('/list', methods=['GET'])
 def get_users():
@@ -69,7 +97,7 @@ def add_project():
     description = request.json['description']
     credits = 0
 
-    new_project = Project(name, author_id, author, supporters, description, credits)
+    new_project = Project(name, author_id, author, description, credits)
     session.add(new_project)
     session.commit()
 

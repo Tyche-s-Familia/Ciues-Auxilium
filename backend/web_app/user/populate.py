@@ -1,3 +1,4 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy import Table, Column, Integer, String, Text, ForeignKey, Numeric
 from sqlalchemy.orm import sessionmaker, relationship
@@ -54,30 +55,31 @@ class Project(Base):
             self.description = description
             self.credits = credits
 
+def pop():
 
-engine = create_engine('postgresql://testuser:testingorm@localhost/testorm', echo=True)
+    engine = create_engine(os.environ['DATABASE_URL'], echo=True)
 
-Session = sessionmaker(engine)
-session = Session()
+    Session = sessionmaker(engine)
+    session = Session()
 
 
 
-testuser = User(username='Me', email='fake@mail.ru') 
-session.add(testuser)
-session.commit()
+    testuser = User(username='Me', email='fake@mail.ru') 
+    session.add(testuser)
+    session.commit()
 
-testuser1 = User(username='eeeMe', email='eeefake@mail.ru') 
-session.add(testuser1)
-session.commit()
+    testuser1 = User(username='eeeMe', email='eeefake@mail.ru') 
+    session.add(testuser1)
+    session.commit()
 
-testproject = Project(name='myDegeneracy', author_id= 1, author=testuser, description="work work work")
-session.add(testproject)
-session.commit()
+    testproject = Project(name='myDegeneracy', author_id= 1, author=testuser, description="work work work")
+    session.add(testproject)
+    session.commit()
 
-testproject1 = Project(name='myEnlightment', author=testuser, author_id= 1, description="don't work work work")
-session.add(testproject1)
-session.commit()
+    testproject1 = Project(name='myEnlightment', author=testuser, author_id= 1, description="don't work work work")
+    session.add(testproject1)
+    session.commit()
 
-testproject2 = Project(name='despare',author_id= 2, author=testuser1,description="never gonna work work work")
-session.add(testproject2)
-session.commit()
+    testproject2 = Project(name='despare',author_id= 2, author=testuser1,description="never gonna work work work")
+    session.add(testproject2)
+    session.commit()

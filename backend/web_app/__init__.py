@@ -10,6 +10,7 @@ from sqlalchemy import create_engine
 
 from .user.models import Base
 
+
 app = Flask(__name__)
 api = Api(app)
 app.config.update(
@@ -29,6 +30,11 @@ app.register_blueprint(users)
 app.register_blueprint(projects)
 
 
+from  .user.populate import pop
+
+@app.cli.command('populate')
+def populate():
+    pop()
 
 
 
@@ -38,9 +44,14 @@ def create_tables():
 
     Base.metadata.drop_all(bind=engine)
     Base.metadata.create_all(engine)  
-
+    print(os.environ['DATABASE_URL'])
 
     # user_models.db.drop_all()
     # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
     # user_models.db.create_all()
     # user_models.db.session.commit()
+
+from .user.routes import Session
+
+session = Session()
+session.flush()
