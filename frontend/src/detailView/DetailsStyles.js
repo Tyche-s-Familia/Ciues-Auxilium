@@ -20,7 +20,6 @@ export const ProjectInfo = styled.div`
 
 export const Updates = styled.div`
     grid-area: Updates;
-    margin: 0.5rem;
     display: grid;
     grid-template-rows: 3vh auto;
     grid-template-areas: 'ProjectUpdates ProjectUpdates ProjectUpdates'
@@ -32,11 +31,13 @@ export const ProjectUpdates = styled.div`
     color: white;
     margin: 0.5rem;
 `;
+
 export const UpdateDate = styled.div`
     grid-area: UpdateDate;
     background: white;
     margin: 0.5rem;
 `;
+
 export const Description = styled.div`
     grid-area: Description;
     background: white;
