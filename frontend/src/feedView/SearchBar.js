@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef } from "react"
 
 import {
     Search,
@@ -51,7 +51,7 @@ const SearchBar = () => {
               />
             </Form>
           </Search>
-    );
-};
+    )
+}
 
-export default SearchBar;
+export default SearchBar
