@@ -11,7 +11,6 @@ import {
 } from '../GlobalStyles'
 
 const Feed = () => {
-
     return (
         <Wrapper>
           <TopNavBar />

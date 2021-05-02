@@ -1,10 +1,17 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy import Table, Column, Integer, String, Text, ForeignKey, Numeric
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy.ext.declarative import declarative_base
 
+engine = create_engine(os.environ['DATABASE_URL'], echo=True)
+# engine = create_engine('postgresql://testuser:testingorm@localhost/testorm', echo=True)
 # from .models import User, Project
 Base = declarative_base ()
+
+Base.metadata.drop_all(bind=engine)
+Base.metadata.create_all(engine)
+
 association_table_suporter = Table('supporter_assosiaction', Base.metadata,
     Column('user_id', Integer, ForeignKey('user.user_id')),
     Column('project_id', Integer, ForeignKey('project.project_id'))
@@ -55,7 +62,6 @@ class Project(Base):
             self.credits = credits
 
 
-engine = create_engine('postgresql://testuser:testingorm@localhost/testorm', echo=True)
 
 Session = sessionmaker(engine)
 session = Session()
