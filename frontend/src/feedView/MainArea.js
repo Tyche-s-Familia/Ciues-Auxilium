@@ -6,9 +6,6 @@ import {
     Button,
     MidMain,
     MidBox1,
-    MidBox2,
-    MidBox3,
-    MidBox4,
     Img,
     Info,
     Description
@@ -27,21 +24,6 @@ const MainArea = () => {
                 <Info>Info</Info>
                 <Description>Description</Description>
               </MidBox1>
-              <MidBox2>
-                <Img>Img</Img>
-                <Info>Info</Info>
-                <Description>Description</Description>
-              </MidBox2>
-              <MidBox3>
-                <Img>Img</Img>
-                <Info>Info</Info>
-                <Description>Description</Description>
-              </MidBox3>
-              <MidBox4>
-                <Img>Img</Img>
-                <Info>Info</Info>
-                <Description>Description</Description>
-              </MidBox4>
             </MidMain>
           </Main>
     )
