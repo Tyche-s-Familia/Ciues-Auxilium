@@ -1,3 +1,0 @@
-CREATE DATABASE testorm;
-CREATE USER testuser WITH PASSWORD 'testingorm';
-GRANT ALL PRIVILEGES ON DATABASE testorm TO testuser;
