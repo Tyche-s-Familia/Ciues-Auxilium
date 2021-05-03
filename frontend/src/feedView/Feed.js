@@ -21,10 +21,12 @@ export const searchState = atom({
 	defalut: '',
 })
 
-const Feed = () => {
+export default function Feed() {
 
 	const [data, setData] = useState()
 	const [search, setSearch] = useRecoilState(searchState)
+
+  useEffect(() => {}, [data])
 
   useEffect(() => {
     if (search !== null && search !== undefined && search !== '') {
@@ -61,5 +63,3 @@ const Feed = () => {
     return <h1>Loading</h1>
   }
 }
-
-export default Feed

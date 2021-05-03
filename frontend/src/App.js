@@ -28,7 +28,7 @@ export default function App() {
     <Router>
       <GlobalStyles />
       <Switch>
-        <Route exact path='/' render={Feed} />
+      <Route exact path='/' render={() => <Feed />} />
         <Route exact path='/account' component={Users} />
         <Route exact path='/details' component={Details} />
       </Switch>
