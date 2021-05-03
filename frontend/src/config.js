@@ -1,5 +1,2 @@
-const APIurl =
-	window.location.hostname === 'localhost'
-		? 'http://localhost:5000'
-		: 'https://hello.herokuapp.com/';
+const APIurl = 'https://notpatreon-deploy.herokuapp.com/'
 export default APIurl;
