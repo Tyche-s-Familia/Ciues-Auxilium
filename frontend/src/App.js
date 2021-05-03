@@ -1,6 +1,6 @@
 import React from "react";
-import APIurl from "./config"
-import axios from "axios"
+// import APIurl from "./config"
+// import axios from "axios"
 import { BrowserRouter as Router, Route, Switch, useHistory } from "react-router-dom";
 
 import Feed from './feedView/Feed'
@@ -13,16 +13,16 @@ import {
 
 export default function App() {
 
-  const history = useHistory();
-  axios
-			.get(`${APIurl}users`, {mode:'cors'})
-			.then(function (response) {
-				console.log(response);
-			})
-			.then(() => history.push('/account'))
-			.catch(function (error) {
-				console.log(error);
-			});
+  // const history = useHistory();
+  // axios
+	// 		.get(`${APIurl}users`, {mode:'cors'})
+	// 		.then(function (response) {
+	// 			console.log(response);
+	// 		})
+	// 		.then(() => history.push('/account'))
+	// 		.catch(function (error) {
+	// 			console.log(error);
+	// 		});
 
   return (
     <Router>
