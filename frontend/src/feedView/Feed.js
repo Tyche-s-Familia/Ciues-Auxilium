@@ -33,7 +33,7 @@ export default function Feed() {
       axios
       .get(`${APIurl}projects`, {mode:'cors'})
       .then((res) => setData(
-        res.data.filter((item) => item.title.lowerCase().includes(search.toLowerCase()))
+        res.data.filter((item) => item.name.lowerCase().includes(search.toLowerCase()))
       )
       )
       .catch(console.error)
@@ -47,6 +47,8 @@ export default function Feed() {
       .catch(console.error)
     }
   }, [search])
+  
+  console.log(data)
 
   if (data) {
     return (
