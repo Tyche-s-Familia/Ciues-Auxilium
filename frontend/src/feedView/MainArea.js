@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import {
     Main,
@@ -6,12 +6,12 @@ import {
     Button,
     MidMain,
     MidBox1,
-    Img,
-    Info,
+    // Img,
+    // Info,
     Description
 } from '../GlobalStyles'
 
-const MainArea = () => {
+const MainArea = ({ data }) => {
     return (
         <Main>
             <TopMain>
@@ -19,11 +19,13 @@ const MainArea = () => {
               <Button to='updates' >UPDATES</Button>
             </TopMain>
             <MidMain>
-              <MidBox1>
-                <Img>Img</Img>
-                <Info>Info</Info>
-                <Description>Description</Description>
-              </MidBox1>
+              {data.map((item) => {
+                return (
+                  <MidBox1 key={item._id}>
+                    <Description item={item} />
+                  </MidBox1>
+                )
+              })}
             </MidMain>
           </Main>
     )
