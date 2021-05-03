@@ -8,6 +8,7 @@ import {
 } from './UsersStyles'
 
 const ProjectView = () => {
+
     return (
         <Project>
             <UserPro>USER’S PROJECTS</UserPro>
