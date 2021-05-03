@@ -174,40 +174,10 @@ export const MidMain = styled.div`
   display: grid;
   grid-area: MidMain;
   grid-template-areas: 'MidBox1 MidBox1 MidBox1'
-  'MidBox2 MidBox2 MidBox2'
-  'MidBox3 MidBox3 MidBox3'
-  'MidBox4 MidBox4 MidBox4'
 `;
 
 export const MidBox1 = styled.div`
   grid-area: MidBox1;
-  background: white;
-  margin: 1em;
-  display: grid;
-  grid-template-areas:
-  'Img Info Desc Desc';
-`;
-
-export const MidBox2 = styled.div`
-  grid-area: MidBox2;
-  background: white;
-  margin: 1em;
-  display: grid;
-  grid-template-areas:
-  'Img Info Desc Desc';
-`;
-
-export const MidBox3 = styled.div`
-  grid-area: MidBox3;
-  background: white;
-  margin: 1em;
-  display: grid;
-  grid-template-areas:
-  'Img Info Desc Desc';
-`;
-
-export const MidBox4 = styled.div`
-  grid-area: MidBox4;
   background: white;
   margin: 1em;
   display: grid;
