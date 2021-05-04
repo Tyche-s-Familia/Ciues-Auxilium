@@ -6,8 +6,6 @@ import {
     Button,
     MidMain,
     MidBox1,
-    // Img,
-    // Info,
     Description
 } from '../GlobalStyles'
 
