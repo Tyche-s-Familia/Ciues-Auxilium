@@ -26,8 +26,6 @@ export default function Feed() {
 	const [data, setData] = useState()
 	const [search, setSearch] = useRecoilState(searchState)
 
-  // useEffect(() => {}, [data])
-
   useEffect(() => {
     if (search) {
       axios
