@@ -2,6 +2,16 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import APIurl from '../config';
 import axios from 'axios';
+import Login from './Login'
+
+import {
+	SignInNav,
+	SignUpContainer,
+	HeaderOne,
+	PrimaryButton,
+	Label,
+	InputStyle
+} from './FormStyle'
 
 export default function SignUp() {
 
@@ -45,17 +55,10 @@ export default function SignUp() {
 			<SignUpContainer>
 				<form onSubmit={handleNewSubmit} className='form' noValidate>
 					<HeaderOne>Sign Up</HeaderOne>
-					<TertiaryButton>
-						<Icon src={alert} alt='alert'></Icon>Password must be 6 characters
-						or more
-					</TertiaryButton>
-					<Required>
-						<Asterisk>*</Asterisk> indicates a required field
-					</Required>
 
 					<div className='signup-group'>
 						<Label>
-							<Asterisk>*</Asterisk> Email
+							 Email
 						</Label>
 						<InputStyle
 							type='text'
@@ -69,7 +72,7 @@ export default function SignUp() {
 
 					<div className='signup-group'>
 						<Label>
-							<Asterisk>*</Asterisk> Password
+							 Password
 						</Label>
 						<InputStyle
 							type='password'
@@ -83,7 +86,7 @@ export default function SignUp() {
 
 					<div className='signup-group'>
 						<Label>
-							<Asterisk>*</Asterisk> Confirm Password
+							 Confirm Password
 						</Label>
 						<InputStyle
 							type='password'
@@ -95,25 +98,12 @@ export default function SignUp() {
 						/>
 					</div>
 
-					<div className='signup-group'>
-						<div className='checkbox'>
-							<input
-								type='checkbox'
-								className='control-input'
-								id='customCheck'
-							/>
-							<label className='control-label' htmlFor='customCheck'>
-								I accept our Terms of Service and Privacy Policy
-							</label>
-						</div>
-					</div>
-
 					<PrimaryButton type='submit' className='btn'>
 						Sign Up
 					</PrimaryButton>
 
 					<div className='new-member'>
-						Already have an account <Link to='/signin'>Sign In</Link>
+						Already have an account <Link to='/Login'>Sign In</Link>
 					</div>
 				</form>
 			</SignUpContainer>
