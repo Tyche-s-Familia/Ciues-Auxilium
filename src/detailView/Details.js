@@ -28,9 +28,9 @@ const Details = ({match}) => {
 
     },[])
 
-    // useEffect(() => {
-    //     console.log(details);
-    // }, [details]);
+    useEffect(() => {
+        console.log(details);
+    }, [details]);
 
     if (details) {
     return (
