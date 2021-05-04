@@ -3,6 +3,15 @@ import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios';
 import APIurl from '../config'
 
+import {
+	SignInNav,
+	SignUpContainer,
+	HeaderOne,
+	PrimaryButton,
+	Label,
+	InputStyle
+} from './FormStyle'
+
 export default function Login() {
 	const history = useHistory();
 
