@@ -14,6 +14,7 @@ const axios = require('axios').default
 
 const Details = ({match}) => {
     const id = match.params.id
+    console.log(id);
     const [details, setDetails] = useState();
     const url = `https://notpatreon-deploy.herokuapp.com/projects/${id}`
     console.log(url);
@@ -35,13 +36,15 @@ const Details = ({match}) => {
     if (details) {
     return (
         <>
-        
-            <Wrapper>
-                <TopNavBar />
-                <ProjectView details={details}/>
-                <UpdatesView />
-                <Footer />
-            </Wrapper>
+            <TopNavBar />
+                <div>
+                    <h1 className='name'>{details.name}</h1>
+                    <h1 className='author_id'>{details.author_id}</h1>
+
+
+                    <h3 className='description'>{details.description}</h3>
+                </div>
+
         </>
     )
     } else {

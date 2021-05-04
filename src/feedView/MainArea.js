@@ -1,4 +1,6 @@
 import React from 'react'
+import Details from '../detailView/Details';
+import ProjectView from '../detailView/ProjectView';
 
 import {
     Main,
@@ -10,22 +12,29 @@ import {
 } from '../GlobalStyles'
 
 const MainArea = ({ data }) => {
+  console.log(data);
     return (
+        <>
+        <h1>Test</h1>
         <Main>
-            <TopMain>
+            {/* <TopMain>
               <Button to='projects' >PROJECTS</Button>
               <Button to='updates' >UPDATES</Button>
-            </TopMain>
+            </TopMain> */}
             <MidMain>
+            <h1>TestTop</h1>
               {data.map((item) => {
+                console.log(item);
                 return (
-                  <MidBox1 key={item.id}>
-                    <Description item={item} />
-                  </MidBox1>
+                  <div classname="midbox" key={item.id}>
+                    <h1>Test {item.id}</h1>
+                    <ProjectView item={item} />
+                  </div>
                 )
               })}
             </MidMain>
           </Main>
+        </>
     )
 }
 
