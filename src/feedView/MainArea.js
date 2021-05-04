@@ -12,22 +12,15 @@ import {
 } from '../GlobalStyles'
 
 const MainArea = ({ data }) => {
-  console.log(data);
     return (
         <>
-        <h1>Test</h1>
         <Main>
-            {/* <TopMain>
-              <Button to='projects' >PROJECTS</Button>
-              <Button to='updates' >UPDATES</Button>
-            </TopMain> */}
+
             <MidMain>
-            <h1>TestTop</h1>
               {data.map((item) => {
-                console.log(item);
                 return (
                   <div classname="midbox" key={item.id}>
-                    <h1>Test {item.id}</h1>
+                    <h1>{item.id}{item.name}</h1>
                     <ProjectView item={item} />
                   </div>
                 )

@@ -14,24 +14,18 @@ const axios = require('axios').default
 
 const Details = ({match}) => {
     const id = match.params.id
-    console.log(id);
     const [details, setDetails] = useState();
     const url = `https://notpatreon-deploy.herokuapp.com/projects/${id}`
-    console.log(url);
     useEffect(() => {
         axios
         .get(`${url}`, {mode:'cors'})
         .then((res) => {
-            console.log(res.data);
             setDetails(res.data);
         })
         .catch(console.error);
 
     },[])
 
-    useEffect(() => {
-        console.log(details);
-    }, [details]);
 
     if (details) {
     return (
