@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from "react"
 
 import {
-    ProjectInfo
+    ProjectInfo,
+    Description
 } from './DetailsStyles'
 
-const ProjectView = () => {
+const ProjectView = (props) => {
+    const [idetails, setIDetails] = useState(props.details);
+    console.log(idetails);
     return (
-        <ProjectInfo />
+        // <ProjectInfo />
+        <>
+            <div>
+                <h1 className='name'>{idetails.name}</h1>
+                <h1 className='author_id'>{idetails.author_id}</h1>
+            </div>
+            <Description>
+                <h3 className='description'>{idetails.description}</h3>
+            </Description>
+            
+        </>
     )
 }
 

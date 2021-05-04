@@ -10,6 +10,7 @@ import Details from './detailView/Details'
 import {
   GlobalStyles
 } from './GlobalStyles'
+import SignUp from "./formView/SignUp";
 
 export default function App() {
 
@@ -28,9 +29,11 @@ export default function App() {
     <Router>
       <GlobalStyles />
       <Switch>
-      <Route exact path='/' render={() => <Feed />} />
+        <Route exact path='/' render={() => <Feed />} />
+        <Route exact path='/signup' render={() => <SignUp />} />
         <Route exact path='/account' component={Users} />
-        <Route exact path='/details' component={Details} />
+        <Route exact path='/details/:id' component={Details} />
+        
       </Switch>
     </Router>
   )
