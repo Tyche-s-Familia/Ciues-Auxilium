@@ -26,22 +26,26 @@ export default function Feed() {
 	const [data, setData] = useState()
 	const [search, setSearch] = useRecoilState(searchState)
 
-  useEffect(() => {}, [data])
+  // useEffect(() => {}, [data])
 
   useEffect(() => {
-    if (search !== null && search !== undefined && search !== '') {
+    if (search) {
       axios
-      .get(`${APIurl}projects`, {mode:'cors'})
-      .then((res) => setData(
+      .get(`${APIurl}projects/`, {mode: 'cors'})
+      .then((res) => {
+        console.log(res.data)
+        setData(
         res.data.filter((item) => item.name.lowerCase().includes(search.toLowerCase()))
-      )
+          )
+        }
       )
       .catch(console.error)
     }
     else {
       axios
-      .get(`${APIurl}projects`, {mode:'cors'})
+      .get('https://notpatreon-deploy.herokuapp.com/projects/', {mode: 'cors'})
       .then((res) => {
+        // console.log(res.data)
         setData(res.data)
       })
       .catch(console.error)

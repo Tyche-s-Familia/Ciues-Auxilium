@@ -21,7 +21,7 @@ const MainArea = ({ data }) => {
             <MidMain>
               {data.map((item) => {
                 return (
-                  <MidBox1 key={item._id}>
+                  <MidBox1 key={item.id}>
                     <Description item={item} />
                   </MidBox1>
                 )
