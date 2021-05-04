@@ -1,4 +1,6 @@
 import React from 'react'
+import Details from '../detailView/Details';
+import ProjectView from '../detailView/ProjectView';
 
 import {
     Main,
@@ -11,21 +13,21 @@ import {
 
 const MainArea = ({ data }) => {
     return (
+        <>
         <Main>
-            <TopMain>
-              <Button to='projects' >PROJECTS</Button>
-              <Button to='updates' >UPDATES</Button>
-            </TopMain>
+
             <MidMain>
               {data.map((item) => {
                 return (
-                  <MidBox1 key={item.id}>
-                    <Description item={item} />
-                  </MidBox1>
+                  <div classname="midbox" key={item.id}>
+                    <h1>{item.id}{item.name}</h1>
+                    <ProjectView item={item} />
+                  </div>
                 )
               })}
             </MidMain>
           </Main>
+        </>
     )
 }
 

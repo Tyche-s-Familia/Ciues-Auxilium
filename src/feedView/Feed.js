@@ -43,14 +43,12 @@ export default function Feed() {
       axios
       .get('https://notpatreon-deploy.herokuapp.com/projects/', {mode: 'cors'})
       .then((res) => {
-        // console.log(res.data)
         setData(res.data)
       })
       .catch(console.error)
     }
   }, [search])
   
-  console.log(data)
 
   if (data) {
     return (

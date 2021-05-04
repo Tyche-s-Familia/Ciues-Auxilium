@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from "react"
+import { Link } from 'react-router-dom';
 
 import {
     ProjectInfo,
     Description
 } from './DetailsStyles'
 
-const ProjectView = (props) => {
-    const [idetails, setIDetails] = useState(props.details);
-    console.log(idetails);
+const ProjectView = ({item}) => {
+
+    const [idetails, setIDetails] = useState(item);
+
     return (
-        // <ProjectInfo />
+
         <>
-            <div>
+            <Link className='test' to={`details/${idetails.id}`}>
+                <div>
+                
                 <h1 className='name'>{idetails.name}</h1>
                 <h1 className='author_id'>{idetails.author_id}</h1>
-            </div>
-            <Description>
-                <h3 className='description'>{idetails.description}</h3>
-            </Description>
-            
+                </div>
+            </Link>
         </>
     )
 }

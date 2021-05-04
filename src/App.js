@@ -18,7 +18,7 @@ export default function App() {
       <Switch>
         <Route exact path='/' render={() => <Feed />} />
         <Route exact path='/account' component={Users} />
-        <Route exact path='/details' component={Details} />
+        <Route exact path='/details/:id' component={Details} />
         <Route exact path='/signup' render={() => <SignUp />} />
       </Switch>
     </Router>

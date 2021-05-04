@@ -172,8 +172,9 @@ export const TopMain = styled.div`
 
 export const MidMain = styled.div`
   display: grid;
-  grid-area: MidMain;
-  grid-template-areas: 'MidBox1 MidBox1 MidBox1'
+  // grid-area: MidMain;
+  // grid-template-areas: 'MidBox1 MidBox1 MidBox1'
+  
 `;
 
 export const MidBox1 = styled.div`
@@ -183,6 +184,7 @@ export const MidBox1 = styled.div`
   display: grid;
   grid-template-areas:
   'Img Info Desc Desc';
+  color: black;
 `;
 
 export const Img = styled.div`
